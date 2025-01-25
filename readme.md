@@ -1,4 +1,4 @@
-# MoodBoost 🎯
+# MOODESH 🎯
 
 ## Basic Details
 
@@ -8,7 +8,7 @@
 - **Member 2**: Nazmin Babu Baker - Rajiv Gandhi Institute of Technology,Kottayam
 - **Member 3**:  Merin Mathew - Rajiv Gandhi Institute of Technology,Kottayam
 **Hosted Project Link**  
-[Link to your GitHub Pages or live website here]
+  [https://nazmin-babubaker.github.io/Moodesh/]
 
 ---
 
