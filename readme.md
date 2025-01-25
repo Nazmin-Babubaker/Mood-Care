@@ -8,7 +8,7 @@
 **Team Members** 
 - **Member 1**: Jyothsna Treesa George - Rajiv Gandhi Institute of Technology,Kottayam
 - **Member 2**: Nazmin Babu Baker - Rajiv Gandhi Institute of Technology,Kottayam
-- **Member 3**:  Merin Mathew - Rajiv Gandhi Institute of Technology,Kottayam
+- **Member 3**:  Merin Mathew - Rajiv Gandhi Institute of Technology,Kottayam \
 **Hosted Project Link**  
   [https://nazmin-babubaker.github.io/Moodesh/]
 
@@ -80,14 +80,14 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 ## Team Contributions  
 Nazmin Babu Baker(Lead Coder):
 1.Developed the idea of mood tracker.
-2.Contributed to the sad mood and main page in the project and worked on debugging.
+2.Contributed to the sad mood and main page in the project and worked on debugging. \
 
 Merin Mathew(Sub Coder)
 1.Contibuted to coding the Stressed and the Curious mood in the project.
-2.Contibuted significantly to documentation of the project.
+2.Contibuted significantly to documentation of the project. \
 
 Jyothsna Treesa George(Sub Coder)
 1.Did all the research and provided most of the resources.
-2.Contibuted to coding the Happy and Bored mood in the project.
+2.Contibuted to coding the Happy and Bored mood in the project. \
 
 
