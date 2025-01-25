@@ -69,8 +69,8 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 *This is the mood page for the 'Sad' mood with a list of cheerful tasks.*
 
 ## Build Photos  
-![Team](Add photo of your team here)  
-*Our amazing team working hard on the Moodesh website!*
+![Team](pic.jpg)  
+*Our amazing team working hard on the Moodesh webpage/*
 
 ## Project Demo  
 **Video**  
