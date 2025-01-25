@@ -82,6 +82,12 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
   Your browser does not support the video tag.
 </video>
 
+
+
+https://github.com/user-attachments/assets/b3824cf8-8d08-4188-aaa5-5d85341a4248
+
+
+
 ## Team Contributions  
 Nazmin Babu Baker(Lead Coder): \
 1.Developed the idea of mood tracker.
