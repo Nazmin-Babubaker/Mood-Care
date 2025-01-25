@@ -13,7 +13,7 @@
 ---
 
 ## Project Description  
-MoodBoost is an interactive website that helps users improve their mood by providing personalized tasks based on their emotional state. The site features a mood selector that directs users to engaging activities tailored to their current feelings.
+Moodesh is an interactive website that helps users improve their mood by providing personalized tasks based on their emotional state. The site features a mood selector that directs users to engaging activities tailored to their current feelings.
 
 ---
 
@@ -23,7 +23,7 @@ In a fast-paced world, emotions often take a backseat. We all face stress, bored
 ---
 
 ## The Solution  
-MoodBoost offers a fun, simple way to manage your emotions. Based on your selected mood, the website suggests activities ranging from playing games to engaging in mindfulness exercises. It’s like having a virtual cheerleader in your pocket!
+Moodesh offers a fun, simple way to manage your emotions. Based on your selected mood, the website suggests activities ranging from playing games to engaging in mindfulness exercises. It’s like having a virtual cheerleader in your pocket!
 
 ---
 
@@ -60,7 +60,7 @@ MoodBoost offers a fun, simple way to manage your emotions. Based on your select
 ### For Software:
 
 #### Screenshots  
-![Screenshot1](Add screenshot 1 here with proper name)  
+![Screenshot1](image.png)  
 *This shows the homepage where the user selects their mood.*
 
 ![Screenshot2](Add screenshot 2 here with proper name)  
