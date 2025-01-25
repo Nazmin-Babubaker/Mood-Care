@@ -74,7 +74,8 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 
 ## Project Demo  
 **Video**  
-[(https://github.com/Nazmin-Babubaker/Moodesh/blob/main/video.mp4)]  
+[(https://github.com/Nazmin-Babubaker/Moodesh/blob/main/video.mp4)]
+<video src="https://raw.githubusercontent.com/Nazmin-Babubaker/Moodesh/blob/main/video.mp4" controls width="100%"></video>
 *This video shows how the website works, demonstrating user interactions and the mood-to-task flow.
 
 ## Team Contributions  
