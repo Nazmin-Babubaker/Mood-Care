@@ -1,4 +1,4 @@
-# Moodesh
+# MoodBoost 🎯
 
 ## Basic Details
 
@@ -13,17 +13,17 @@
 ---
 
 ## Project Description  
-Moodesh is an interactive webpage that helps users improve their mood by providing personalized tasks based on their emotional state. The site features a mood selector that directs users to engaging activities tailored to their current feelings.
+MoodBoost is an interactive website that helps users improve their mood by providing personalized tasks based on their emotional state. The site features a mood selector that directs users to engaging activities tailored to their current feelings.
 
 ---
 
 ## The Problem Statement  
-In a fast-paced world, emotions often take a backseat.Mental Helath is often underlooked. We all face stress, boredom, loneliness, and other mood swings that impact our mental health. What if you could get an instant pick-me-up with just one click?
+In a fast-paced world, emotions often take a backseat. We all face stress, boredom, loneliness, and other mood swings that impact our mental health. What if you could get an instant pick-me-up with just one click?
 
 ---
 
 ## The Solution  
-Moodesh offers a fun, simple way to manage your emotions. Based on your selected mood, the website suggests activities ranging from playing games to engaging in mindfulness exercises. It’s like having a virtual cheerleader in your pocket!(Who wouldn't mind having an emotional support within our hands reach...)
+MoodBoost offers a fun, simple way to manage your emotions. Based on your selected mood, the website suggests activities ranging from playing games to engaging in mindfulness exercises. It’s like having a virtual cheerleader in your pocket!
 
 ---
 
@@ -35,7 +35,7 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 - **Languages Used**: HTML, CSS, JavaScript  
 - **Frameworks Used**: None (pure HTML, CSS, and JS)  
 - **Libraries Used**: jQuery (optional for enhanced interactivity)  
-- **Tools Used**: VS Code, Git, GitHub,Image Editor(For processing images)
+- **Tools Used**: VS Code, Git, GitHub
 
 #### For Hardware:
 - Not applicable (this is a web project)
@@ -60,8 +60,8 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 ### For Software:
 
 #### Screenshots  
-![Screenshot1](the home page where user selects their current mood)  
-![alt text](image.png)
+![Screenshot1](Add screenshot 1 here with proper name)  
+*This shows the homepage where the user selects their mood.*
 
 ![Screenshot2](Add screenshot 2 here with proper name)  
 *This is the mood page for the 'Happy' mood with a list of cheerful tasks.*
@@ -69,25 +69,27 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 ![Screenshot3](Add screenshot 3 here with proper name)  
 *The 'Stressed' mood page, where relaxation exercises are suggested.*
 
+#### Diagrams  
+![Workflow](Add your workflow/architecture diagram here)  
+*This diagram explains the flow of user interaction, starting from mood selection to task presentation.*
+
+---
+
 ## Build Photos  
 ![Team](Add photo of your team here)  
-*Our amazing team working hard on the Moodesh website!*
+*Our amazing team working hard on the MoodBoost website!*
 
 ![Components](Add photo of your components here)  
 *If any additional devices or peripherals were used (e.g., IoT integration), list them here.*
 
 ---
 
+## Project Demo  
+**Video**  
+[Add your demo video link here]  
+*This video shows how the website works, demonstrating user interactions and the mood-to-task flow.*
+
+---
+
 ## Team Contributions  
-Nazmin Babu Baker(Lead Coder):
-1.Initiated the idea of building such a mood tracker.
-2.Contributed the main page and sad mood in the Moodesh
-3.Worked on developing the user interface.
 
-Merin Mathew(Sub Coder)
-1.Contributed towards Stressed and Curious part of the project.
-2.Installed Git and worked on GitHub for the proper documentation of the project.
-
-Jyothsna Treesa George(Sub coder)
-1.Did most of the researching and provided the materials and resources
-2.contributed the happy mood, bored mood in th Moodesh
