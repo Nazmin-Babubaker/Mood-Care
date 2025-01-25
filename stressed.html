@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stressed</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+  <style>
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+            background-color: #af0606;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+    }
+    .container {
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            justify-content: center;
+    }
+    h1 {
+        font-family: "Oi", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.5rem; 
+            letter-spacing: 2px;
+            color: rgb(234, 234, 115);
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .menu button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      background-color: #f7ba03;
+      color: black;
+      cursor: pointer;
+      width: 150px;
+    }
+    .menu button:hover {
+      background-color: #b39800;
+    }
+    .section {
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      display: none; /* Hide by default */
+    }
+    /* Game Section */
+    #game-section {
+      background-color: #fabd05; /* Light red */
+    }
+    /* Breathing Exercise Section */
+    #breathing-section {
+      background-color: #d4edda; /* Light green */
+    }
+    /* Meditation Section */
+    #meditation-section {
+      background-color: rgb(237, 237, 135); /* Light blue */
+    }
+    /* Circle for Breathing Exercise */
+    .circle {
+      width: 150px;
+      height: 150px;
+      background-color: #ffe600;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      margin: 20px auto;
+      animation: breathe 8s infinite;
+    }
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+        background-color: #ffc800;
+      }
+      50% {
+        transform: scale(1.5);
+        background-color: #b38600;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <img src="stress.png" alt="mood" class="meme">
+        <h1>Feeling Stressed? Let's Help You Relax! 🧘‍♂️</h1>
+
+    </div>
+   
+    <!-- Menu -->
+    <div class="menu">
+      <button onclick="showSection('game-section')">Game</button>
+      <button onclick="showSection('breathing-section')">Breathing Exercise</button>
+      <button onclick="showSection('meditation-section')">Meditation</button>
+    </div>
+
+    <!-- Game Section -->
+    <div id="game-section" class="section">
+      <h2>Play a Game</h2>
+      <p>Click the button below to play a random game:</p>
+      <a href="RandomEmoji.html"><button>Random Emoji Generator</button></a>
+    </div>
+
+    <!-- Breathing Exercise Section -->
+    <div id="breathing-section" class="section">
+      <h2>Breathing Exercise</h2>
+      <p>Follow the circle to breathe in and out:</p>
+      <div class="circle">Breathe</div>
+      <p>Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds.</p>
+    </div>
+
+    <!-- Meditation Section -->
+    <div id="meditation-section" class="section">
+      <h2>Meditation</h2>
+      <p>Try these meditation techniques:</p>
+      <ul>
+        <li>Close your eyes and focus on your breath for 5 minutes.</li>
+        <li>Listen to calming music or nature sounds.</li>
+        <li>Follow a guided meditation video on YouTube:</li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ssss7V1_eyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ul>
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html"><button style="height: 50px;width: 100px; border-radius: 50px;background-color: #f7ba03;border: transparent;">Back to Home</button></a>
+  </div>
+
+  <script>
+    // Function to show/hide sections
+    function showSection(sectionId) {
+      // Hide all sections
+      document.getElementById('game-section').style.display = 'none';
+      document.getElementById('breathing-section').style.display = 'none';
+      document.getElementById('meditation-section').style.display = 'none';
+
+      // Show the selected section
+      document.getElementById(sectionId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

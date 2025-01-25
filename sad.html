@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad Mood</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+
+    <style>
+       
+
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(90, 170, 194, 0.99);
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-family: "Oi", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.5rem; 
+            letter-spacing: 2px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            justify-content: center;
+            
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-bottom: 20px;         
+        }
+
+        .meme {
+            width: 200px; 
+            height: auto; 
+            margin-bottom: 10px; 
+        }
+
+        h1 {
+            color: #333;
+        }
+
+
+        .options{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            /*flex-grow: 1;*/
+            width: 100%;
+            justify-content: center;
+        }
+
+        button {
+            margin: 10px;
+            height: 50px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            background-color:rgb(4, 2, 98);
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="sad.png" alt="Sad Icon" class="meme">
+            <h1>Veshmikandada unni</h1>
+        </div>
+        
+        <p style="margin-top: 5px; margin-bottom: 5px;">Choose an option to feel better:</p>
+
+        <!-- Options Section -->
+        <div class="options">
+            <button onclick="redirectTo('game.html')">Play a Game</button>
+            <button onclick="redirectTo('jokes.html')">Tell Me a Joke</button>
+            <button onclick="redirectTo('video.html')">Watch an Uplifting Video</button>
+        </div>
+
+        <!-- Back to Home Button -->
+        <a href="../index.html"><button style="width: 200px;">Back to Home</button></a>
+    </div>
+
+    <!-- JavaScript for Redirection -->
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

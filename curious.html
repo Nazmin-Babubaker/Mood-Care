@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #bb85bf;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            justify-content: center;
+    }
+    h1{
+            font-family: "Oi", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.5rem; 
+            letter-spacing: 2px;
+        }
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .menu button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      background-color: #ff00d4;
+      color: white;
+      cursor: pointer;
+      width: 300px;
+      height: 50px;
+    }
+    .menu button:hover {
+      background-color: #d379b8;
+      color: black;
+    }
+    .section {
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: none; /* Hide all sections by default */
+    }
+    /* Quiz Styles */
+    .quiz-container input,
+    .puzzle-container input,
+    .typing-speed-container textarea {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .quiz-container button,
+    .puzzle-container button,
+    .typing-speed-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color:#ff00d4;
+      color: white;
+      cursor: pointer;
+    }
+    .quiz-container button:hover,
+    .puzzle-container button:hover,
+    .typing-speed-container button:hover {
+      background-color: #d379b8;
+    }
+    .result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    /* Game and Fact Generator Styles */
+    .game {
+      display: none;
+    }
+    .fact-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff00d4;
+      color: white;
+      cursor: pointer;
+    }
+    .fact-container button:hover {
+      background-color: #d379b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div>
+        <img src="curious.png" alt="mood" class="meme">
+        <h1>Feeling Curious? Let's Explore! </h1>
+    </div>
+    
+
+    <!-- Menu -->
+    <div class="menu">
+      <button onclick="showSection('quiz-section')">Quiz</button>
+      <button onclick="showSection('game-section')">Games</button>
+      <button onclick="showSection('fact-section')">Random Facts</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz-section" class="section">
+      <h2>Quiz</h2>
+      <p id="quiz-question"></p>
+      <div class="quiz-container">
+        <input type="text" id="quiz-answer" placeholder="Your answer">
+        <button onclick="checkQuizAnswer()">Submit</button>
+        <p class="result" id="quiz-result"></p>
+      </div>
+    </div>
+
+    <!-- Game Section -->
+    <div id="game-section" class="section">
+      <h2>Games</h2>
+      <div class="game-menu">
+        <button onclick="showGame('word-puzzle-game')">Word Puzzle Game</button>
+        <button onclick="showGame('typing-speed-game')">Typing Speed Game</button>
+      </div>
+
+      <!-- Word Puzzle Game -->
+      <div id="word-puzzle-game" class="game">
+        <h3>Word Puzzle Game</h3>
+        <p>Unscramble the word:</p>
+        <div class="puzzle-container">
+          <p id="scrambled-word"></p>
+          <input type="text" id="puzzle-guess" placeholder="Your answer">
+          <button onclick="checkPuzzleAnswer()">Submit</button>
+          <p class="result" id="puzzle-result"></p>
+        </div>
+      </div>
+
+      <!-- Typing Speed Game -->
+      <div id="typing-speed-game" class="game">
+        <h3>Typing Speed Game</h3>
+        <p>Type the following sentence as fast as you can:</p>
+        <div class="typing-speed-container">
+          <p id="typing-text">The quick brown fox jumps over the lazy dog.</p>
+          <textarea id="typing-input" placeholder="Start typing here..."></textarea>
+          <p class="timer">Time Left: <span id="typing-timer">20</span>s</p>
+          <p class="result" id="typing-result"></p>
+          <button id="try-again-button" onclick="startTypingSpeedGame()" style="display: none;">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Random Fact Generator Section -->
+    <div id="fact-section" class="section">
+      <h2>Random Fact Generator</h2>
+      <div class="fact-container">
+        <button onclick="generateFact()">Generate Fact</button>
+        <p id="random-fact">Click the button to get a fact!</p>
+      </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html"><button style="background-color: #ff00d4; height: 50px; width: 100px ;border-radius: 50px; border: transparent;color: white;">Back to Home</button></a>
+  </div>
+
+  <script>
+    // Function to show/hide sections
+    function showSection(sectionId) {
+      // Hide all sections
+      document.getElementById('quiz-section').style.display = 'none';
+      document.getElementById('game-section').style.display = 'none';
+      document.getElementById('fact-section').style.display = 'none';
+
+      // Show the selected section
+      document.getElementById(sectionId).style.display = 'block';
+
+      // Reset games when the game section is shown
+      if (sectionId === 'game-section') {
+        showGame('word-puzzle-game');
+      }
+
+      // Load a new quiz question when the quiz section is shown
+      if (sectionId === 'quiz-section') {
+        loadQuizQuestion();
+      }
+    }
+
+    // Function to show/hide games within the game section
+    function showGame(gameId) {
+      // Hide all games
+      document.getElementById('word-puzzle-game').style.display = 'none';
+      document.getElementById('typing-speed-game').style.display = 'none';
+
+      // Show the selected game
+      document.getElementById(gameId).style.display = 'block';
+
+      // Initialize the selected game
+      if (gameId === 'word-puzzle-game') {
+        startPuzzleGame();
+      } else if (gameId === 'typing-speed-game') {
+        startTypingSpeedGame();
+      }
+    }
+
+    // Quiz Logic
+    const quizQuestions = [
+      { question: "What is the capital of France?", answer: "paris" },
+      { question: "What is the largest planet in our solar system?", answer: "jupiter" },
+      { question: "Who wrote the play 'Romeo and Juliet'?", answer: "william shakespeare" },
+      { question: "What is the chemical symbol for water?", answer: "h2o" },
+      { question: "What is the capital of Japan?", answer: "tokyo" }
+    ];
+
+    let currentQuizQuestionIndex = 0;
+
+    function loadQuizQuestion() {
+      const quizQuestion = quizQuestions[currentQuizQuestionIndex].question;
+      document.getElementById('quiz-question').textContent = quizQuestion;
+      document.getElementById('quiz-result').textContent = '';
+      document.getElementById('quiz-answer').value = '';
+    }
+
+    function checkQuizAnswer() {
+      const userAnswer = document.getElementById('quiz-answer').value.trim().toLowerCase();
+      const correctAnswer = quizQuestions[currentQuizQuestionIndex].answer;
+
+      if (userAnswer === correctAnswer) {
+        document.getElementById('quiz-result').textContent = 'Correct! Loading next question...';
+        setTimeout(() => {
+          currentQuizQuestionIndex = (currentQuizQuestionIndex + 1) % quizQuestions.length; // Move to the next question
+          loadQuizQuestion(); // Load the next question
+        }, 2000); // Wait 2 seconds before loading the next question
+      } else {
+        document.getElementById('quiz-result').textContent = 'Incorrect. Try again!';
+      }
+    }
+
+    // Word Puzzle Logic
+    const words = ['apple', 'banana', 'cherry', 'orange', 'grape'];
+    let currentPuzzleWord = '';
+
+    function startPuzzleGame() {
+      currentPuzzleWord = words[Math.floor(Math.random() * words.length)];
+      const scrambledWord = currentPuzzleWord.split('').sort(() => Math.random() - 0.5).join('');
+      document.getElementById('scrambled-word').textContent = scrambledWord;
+      document.getElementById('puzzle-result').textContent = '';
+      document.getElementById('puzzle-guess').value = '';
+    }
+
+    function checkPuzzleAnswer() {
+      const userAnswer = document.getElementById('puzzle-guess').value.trim().toLowerCase();
+
+      if (userAnswer === currentPuzzleWord) {
+        document.getElementById('puzzle-result').textContent = 'Correct!';
+      } else {
+        document.getElementById('puzzle-result').textContent = 'Incorrect. Try again!';
+      }
+    }
+
+    // Typing Speed Logic
+    let typingTimer;
+    let typingTimeLeft = 20; // 20-second timer
+    let typingStartTime;
+    let sentences = [
+      "The quick brown fox jumps over the lazy dog.",
+      "Programming is fun and challenging.",
+      "JavaScript makes web pages interactive.",
+      "Practice makes perfect in coding.",
+      "Coding is the language of the future."
+    ];
+    let currentSentenceIndex = 0;
+
+    function startTypingSpeedGame() {
+      typingTimeLeft = 20; // Reset timer to 20 seconds
+      document.getElementById('typing-timer').textContent = typingTimeLeft;
+      document.getElementById('typing-result').textContent = '';
+      document.getElementById('typing-input').value = '';
+      document.getElementById('typing-input').disabled = false;
+      document.getElementById('try-again-button').style.display = 'none'; // Hide the "Try Again" button
+
+      // Display the current sentence
+      document.getElementById('typing-text').textContent = sentences[currentSentenceIndex];
+
+      // Start the timer
+      typingTimer = setInterval(() => {
+        typingTimeLeft--;
+        document.getElementById('typing-timer').textContent = typingTimeLeft;
+
+        if (typingTimeLeft === 0) {
+          clearInterval(typingTimer);
+          endTypingSpeedGame();
+        }
+      }, 1000);
+
+      typingStartTime = Date.now();
+    }
+
+    function endTypingSpeedGame() {
+      document.getElementById('typing-input').disabled = true;
+      const userInput = document.getElementById('typing-input').value.trim();
+      const correctSentence = sentences[currentSentenceIndex];
+
+      if (userInput === correctSentence) {
+        document.getElementById('typing-result').textContent = "Correct! Loading next sentence...";
+        setTimeout(() => {
+          currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length; // Move to the next sentence
+          startTypingSpeedGame(); // Restart the game with the next sentence
+        }, 2000); // Wait 2 seconds before loading the next sentence
+      } else {
+        document.getElementById('typing-result').textContent = "Incorrect or time's up! Try again.";
+        document.getElementById('try-again-button').style.display = 'block'; // Show the "Try Again" button
+      }
+    }
+
+    // Event listener for typing input
+    document.getElementById('typing-input').addEventListener('input', function () {
+      const userInput = this.value.trim();
+      const correctSentence = sentences[currentSentenceIndex];
+
+      if (userInput === correctSentence) {
+        clearInterval(typingTimer); // Stop the timer
+        endTypingSpeedGame(); // End the game and move to the next sentence
+      }
+    });
+
+    // Fact Generator Logic
+    const facts = [
+      "Honey never spoils. Archaeologists have found pots of honey in ancient tombs that are over 3,000 years old!",
+      "Bananas are berries, but strawberries are not!",
+      "A day on Venus is longer than a year on Venus.",
+      "Octopuses have three hearts and blue blood!",
+      "The Eiffel Tower can be 15 cm taller during the summer due to the expansion of iron."
+    ];
+
+    function generateFact() {
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      document.getElementById('random-fact').textContent = randomFact;
+    }
+  </script>
+</body>
+</html>

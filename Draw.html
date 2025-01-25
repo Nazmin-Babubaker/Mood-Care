@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Something</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #c54c01;
+            padding: 20px;
+        }
+        h1 {
+            color: #f0ae52;
+        }
+        canvas {
+            border: 2px solid black;
+            cursor: crosshair;
+            margin-top: 20px;
+            background-color: aliceblue;
+        }
+        #clearBtn, #eraserBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #clearBtn:hover, #eraserBtn:hover {
+            background-color: #4cae4c;
+        }
+        .color-picker {
+            margin-top: 20px;
+        }
+        .color-btn {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #colorPicker {
+            margin-top: 10px;
+        }
+        .active {
+            border: 2px solid #000;
+            box-shadow: 0 0 5px #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Let Your Creativity Flow 🎨</h1>
+    <canvas id="stickmanCanvas" width="500" height="500"></canvas>
+    <br>
+    <div class="color-picker">
+        <!-- Predefined Color Buttons -->
+        <div class="color-btn" style="background-color: black;" onclick="changeColor('black')"></div>
+        <div class="color-btn" style="background-color: red;" onclick="changeColor('red')"></div>
+        <div class="color-btn" style="background-color: green;" onclick="changeColor('green')"></div>
+        <div class="color-btn" style="background-color: blue;" onclick="changeColor('blue')"></div>
+        <div class="color-btn" style="background-color: yellow;" onclick="changeColor('yellow')"></div>
+        <!-- Color Picker -->
+        <input type="color" id="colorPicker" onchange="changeColor(this.value)">
+    </div>
+    <br>
+    <button id="clearBtn" onclick="clearCanvas()">Clear Canvas</button>
+    <button id="eraserBtn" onclick="activateEraser()">Eraser</button>
+
+    <script>
+        const canvas = document.getElementById("stickmanCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let currentColor = "black"; // Default color
+        let isEraserActive = false; // Eraser state
+
+        // Start drawing
+        canvas.addEventListener("mousedown", (e) => {
+            isDrawing = true;
+            lastX = e.offsetX;
+            lastY = e.offsetY;
+        });
+
+        // Draw the stickman
+        canvas.addEventListener("mousemove", (e) => {
+            if (isDrawing) {
+                const currentX = e.offsetX;
+                const currentY = e.offsetY;
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(currentX, currentY);
+                ctx.strokeStyle = isEraserActive ? "#f0f0f0" : currentColor; // Use background color for eraser
+                ctx.lineWidth = isEraserActive ? 10 : 2; // Thicker line for eraser
+                ctx.stroke();
+                lastX = currentX;
+                lastY = currentY;
+            }
+        });
+
+        // Stop drawing
+        canvas.addEventListener("mouseup", () => {
+            isDrawing = false;
+        });
+
+        // Clear the canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Change the drawing color
+        function changeColor(color) {
+            currentColor = color;
+            isEraserActive = false; // Deactivate eraser when a color is selected
+            updateButtonStyles();
+        }
+
+        // Activate the eraser
+        function activateEraser() {
+            isEraserActive = true;
+            updateButtonStyles();
+        }
+
+        // Update button styles to show active state
+        function updateButtonStyles() {
+            const eraserBtn = document.getElementById("eraserBtn");
+            const colorButtons = document.querySelectorAll(".color-btn");
+
+            if (isEraserActive) {
+                eraserBtn.classList.add("active");
+                colorButtons.forEach(btn => btn.classList.remove("active"));
+            } else {
+                eraserBtn.classList.remove("active");
+                colorButtons.forEach(btn => btn.classList.remove("active"));
+            }
+        }
+    </script>
+</body>
+</html>

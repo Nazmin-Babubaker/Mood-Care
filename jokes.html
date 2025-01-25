@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell Me a Joke</title>
+    <style>
+         
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #009d88;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #0c0101;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            background-color: #074302;
+            color: white;
+            height: 50px;
+            width: 200px;
+        }
+
+        button:hover {
+            background-color: #355a4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Need a Laugh? 😄</h1>
+        <p>Here's a joke for you:</p>
+        <p id="joke"></p>
+        <button onclick="getJoke()">Tell Me Another Joke</button>
+        <a href="../index.html"><button>Back to Home</button></a>
+    </div>
+
+    <script>
+        const jokes = [
+            "Why don’t skeletons fight each other? They don’t have the guts.",
+            "What do you call fake spaghetti? An impasta!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!"
+        ];
+        function getJoke() {
+            const jokeElement = document.getElementById("joke");
+            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+            jokeElement.textContent = randomJoke;
+        }
+        getJoke(); // Display a joke on page load
+    </script>
+</body>
+</html>

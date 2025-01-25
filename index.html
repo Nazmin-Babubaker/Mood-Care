@@ -3,22 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Moodesh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        *{
+            margin : 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2{
+            font-family: "Oi", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.5rem; 
+            letter-spacing: 2px;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFBF00;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-bottom: 8px;
+        }
+
+        .meme{
+
+            width: 300px; 
+            height: auto;
+            margin-bottom: 2px; 
+        }
+
+       
+        
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .mood-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            /*flex-grow: 1;*/
+            width: 100%;
+            justify-content: center;
+        }
+
+        .mood-buttons button {
+            margin: 10px;
+            height: 50px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            background-color:rgb(118, 20, 20);
+            color: white;
+        }
+
+        .mood-buttons button:hover {
+            background-color: rgb(219, 89, 89);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>What is your mood today?</h1>
+       <div class="header">
+        <img src="front.png" alt="mood" class="meme">
+
+        <h2>Engile ennodu para...</h2>
+       </div>
+        
         <div class="mood-buttons">
-            <a href="happy.html"><button>Happy</button></a>
-            <a href="sad.html"><button>Sad</button></a>
-            <a href="stressed.html"><button>Stressed</button></a>
-            <a href="bored.html"><button>Bored</button></a>
-            <a href="curious.html"><button>Curious</button></a>
-            <a href="frustrated.html"><button>Frustrated</button></a>
-            <a href="playful.html"><button>Playful</button></a>
-            <a href="lonely.html"><button>Lonely</button></a>
+            <a href="happy.html"><button>Happy 😊</button></a>
+            <a href="sad.html"><button>Sad 😢</button></a>
+            <a href="stressed.html"><button>Stressed 😫</button></a>
+            <a href="bored.html"><button>Bored 🥱</button></a>
+            <a href="curious.html"><button>Curious 🤔</button></a>
         </div>
     </div>
+    
 </body>
 </html>

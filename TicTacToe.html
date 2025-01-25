@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <style>
+        *{
+            margin: 50px;
+        }
+        body, html {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #030021;
+            margin: 0;
+        }
+        #gameContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #333;
+            background-color: #fff;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+        .cell.winner {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #10dbeaa1;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            width:175px;
+            border-radius: 5px;
+            background-color: #007acc;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: #fff;";>TIC-TAC-TOE</h1>
+<div id="gameContainer"></div>
+<div id="status">Player X's turn</div>
+<button onclick="resetGame()">Restart Game</button>
+
+<script>
+    const gameContainer = document.getElementById("gameContainer");
+    const statusText = document.getElementById("status");
+    let board = Array(9).fill(null);
+    let currentPlayer = "X";
+    let gameActive = true;
+
+    // Winning combinations
+    const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    // Initialize game board
+    function createBoard() {
+        gameContainer.innerHTML = '';
+        board.forEach((_, index) => {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.addEventListener("click", () => handleCellClick(index));
+            gameContainer.appendChild(cell);
+        });
+    }
+
+    // Handle a cell click
+    function handleCellClick(index) {
+        if (board[index] || !gameActive) return;
+
+        board[index] = currentPlayer;
+        updateBoard();
+        checkWinner();
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        statusText.textContent = gameActive ? `Player ${currentPlayer}'s turn` : statusText.textContent;
+    }
+
+    // Update board display
+    function updateBoard() {
+        board.forEach((mark, index) => {
+            const cell = gameContainer.children[index];
+            cell.textContent = mark;
+        });
+    }
+
+    // Check if there's a winner or a draw
+    function checkWinner() {
+        let roundWon = false;
+
+        for (const combination of winningCombinations) {
+            const [a, b, c] = combination;
+            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                roundWon = true;
+                gameActive = false;
+                combination.forEach(index => gameContainer.children[index].classList.add("winner"));
+                statusText.textContent = `Player ${board[a]} wins!`;
+                break;
+            }
+        }
+
+        if (!roundWon && !board.includes(null)) {
+            gameActive = false;
+            statusText.textContent = "It's a draw!";
+        }
+    }
+
+    // Reset game
+    function resetGame() {
+        board = Array(9).fill(null);
+        currentPlayer = "X";
+        gameActive = true;
+        statusText.textContent = "Player X's turn";
+        createBoard();
+    }
+
+    // Start game
+    createBoard();
+</script>
+
+</body>
+</html>
