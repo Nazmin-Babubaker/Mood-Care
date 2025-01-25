@@ -63,17 +63,11 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 ![Screenshot1](image.png)  
 *This shows the homepage where the user selects their mood.*
 
-![Screenshot2](Add screenshot 2 here with proper name)  
+![Screenshot2](image2.png)  
 *This is the mood page for the 'Happy' mood with a list of cheerful tasks.*
 
-![Screenshot3](Add screenshot 3 here with proper name)  
-*The 'Stressed' mood page, where relaxation exercises are suggested.*
 
-#### Diagrams  
-![Workflow](Add your workflow/architecture diagram here)  
-*This diagram explains the flow of user interaction, starting from mood selection to task presentation.*
 
----
 
 ## Build Photos  
 ![Team](Add photo of your team here)  
