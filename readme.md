@@ -64,19 +64,11 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 *This shows the homepage where the user selects their mood.*
 
 ![Screenshot2](image2.png)  
-*This is the mood page for the 'Happy' mood with a list of cheerful tasks.*
-
-
-
+*This is the mood page for the 'Sad' mood with a list of cheerful tasks.*
 
 ## Build Photos  
 ![Team](Add photo of your team here)  
-*Our amazing team working hard on the MoodBoost website!*
-
-![Components](Add photo of your components here)  
-*If any additional devices or peripherals were used (e.g., IoT integration), list them here.*
-
----
+*Our amazing team working hard on the Moodesh website!*
 
 ## Project Demo  
 **Video**  
@@ -86,4 +78,16 @@ Moodesh offers a fun, simple way to manage your emotions. Based on your selected
 ---
 
 ## Team Contributions  
+Nazmin Babu Baker(Lead Coder):
+1.Developed the idea of mood tracker.
+2.Contributed to the sad mood and main page in the project and worked on debugging.
+
+Merin Mathew(Sub Coder)
+1.Contibuted to coding the Stressed and the Curious mood in the project.
+2.Contibuted significantly to documentation of the project.
+
+Jyothsna Treesa George(Sub Coder)
+1.Did all the research and provided most of the resources.
+2.Contibuted to coding the Happy and Bored mood in the project.
+
 
