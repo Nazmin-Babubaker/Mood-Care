@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAPPY...😁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+
   <style>
-    /* General Styling */
+   
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: column; /* Stack elements vertically */
-      justify-content: center; /* Center content vertically */
-      align-items: center; /* Center content horizontally */
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
       height: 100vh;
       background-color: #ddb206;
     }
 
-    /* Heading Styling */
+   
     h2 {
       color: #9e2d00;
       font-family: "Oi", serif;
@@ -28,7 +32,7 @@
             letter-spacing: 0.75px;
     }
 
-    /* Navbar Container */
+   
     .navbar {
       display: flex;
       gap: 20px;
@@ -36,9 +40,8 @@
       align-items: center;
     }
 
-    /* Button Styling */
     .dropdown-button {
-      background-color: #a83e21; /* Green */
+      background-color: #a83e21; 
       color: white;
       padding: 10px 20px;
       font-size: 16px;
@@ -49,10 +52,9 @@
     }
 
     .dropdown-button:hover {
-      background-color: #c9a748; /* Darker green */
+      background-color: #c9a748; 
     }
 
-    /* Dropdown Content (Hidden by Default) */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -64,7 +66,7 @@
       margin-top: 10px;
     }
 
-    /* Links Inside Dropdown */
+    
     .dropdown-content a {
       color: black;
       padding: 10px 15px;
@@ -78,38 +80,38 @@
       border-bottom: none;
     }
 
-    /* Hover Effect for Links */
+    
     .dropdown-content a:hover {
       background-color: #f1f1f1;
     }
 
-    /* Show Dropdown when 'show' class is added */
+   
     .show {
       display: block;
     }
   </style>
 </head>
 <body>
-  <!-- Heading -->
+ 
    <div>
     <img src="happy.png" alt="Sad Icon" class="meme">
     <h2>Mone happy aano...😉</h2>
    </div>
   
 
-  <!-- Buttons Container -->
+ 
   <div class="navbar">
-    <!-- Snake Game Button -->
+    
     <a href="Snake.html">
       <button class="dropdown-button">Snake Game</button>
     </a>
 
-    <!-- Draw Something Button -->
+   
     <a href="Draw.html">
       <button class="dropdown-button">Draw Something</button>
     </a>
 
-    <!-- Playlist Button -->
+   
     <a href="https://open.spotify.com/playlist/71M4KDG3PtM6q50yKigdAn?si=c06b1b9be7aa4242">
       <button class="dropdown-button">Playlist</button>
     </a>
